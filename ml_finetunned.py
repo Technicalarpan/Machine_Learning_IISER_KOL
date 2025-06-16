@@ -10,7 +10,7 @@ df = pd.read_csv("data.csv")
 
 # Applying Few Shot (assume only 10% data is known) to train the model
 
-#Step1 : Assum only 10% data is known
+#Step1 : Assume only 10% data is known
 np.random.seed(42) #we can use any integer. it fix the randomness
 df['label_known'] = 0 #make a new col lable_known as 0
 #Now,randomly choose which rows will have their labels known as 1
