@@ -1,22 +1,24 @@
-
 <h1 align="center">🧠 Machine Learning Fine-Tuning Project</h1>
 
 <div align="center">
-  <strong>Compare Base, Fully Fine-Tuned, and K-Shot Models</strong><br/>
-  📁 Based on a custom dataset | 🧪 Built with Scikit-learn | 👨‍💻 Author: <b>Arpan Mukherjee</b>
+  <strong>Blood Sugar & Sentence Classification | Zero-Shot, Few-Shot, K-Shot, and Fine-Tuning Comparison</strong><br/>
+  📁 Real-World Datasets | 🧪 Built with Scikit-learn | 👨‍💻 Author: <b>Arpan Mukherjee</b>
 </div>
 
 ---
 
 ## 📌 Overview
 
-This project demonstrates the **impact of fine-tuning** on machine learning models trained on a dataset. It includes:
+This project is part of a research internship at IISER Kolkata under the Department of Computational and Data Sciences. It explores the **impact of different fine-tuning strategies** on machine learning models, evaluated through **F1 Score optimization**. The project simulates real-world, low-label learning scenarios using two datasets:
 
-- ✅ **Baseline Training**
-- 🔄 **Full Fine-Tuning**
-- 🎯 **Few-Shot (K-Shot) Fine-Tuning**
+- 🩺 **Binary Classification (Medical)** — Blood sugar prediction
+- 💬 **Sentiment Classification (Text)** — Sentence type prediction
 
-Each approach is implemented using separate Python scripts and evaluated on the same dataset.
+Implemented learning setups include:
+
+- ✅ **Baseline (Zero-Shot)**  
+- 🔄 **Few-Shot and K-Shot Learning**
+- 🎯 **Full Fine-Tuning**
 
 ---
 
@@ -24,69 +26,108 @@ Each approach is implemented using separate Python scripts and evaluated on the 
 
 ```bash
 iiser/
-├── data.csv                    # Custom dataset for training/evaluation
-├── ml_beforefinetunned.py     # Model training without fine-tuning
-├── ml_finetunned.py           # Fully fine-tuned model
-├── ml_kshotfinetunned.py      # K-shot fine-tuning approach
-└── README.md                  # This file
+├── Blood Sugar Model/
+│   ├── data.csv
+│   ├── ml_beforefinetunned.py
+│   ├── ml_finetunned.py
+│   └── ml_kshotfinetunned.py
+│
+├── Sentence Classification Model/
+│   ├── data.csv
+│   ├── nlp_finetunned.py
+│   └── nlp_zeroandfewshot.py
+│
+└── README.md
 ```
 
 ---
 
 ## 💡 Features
 
-- 🔍 Analyze model performance before & after tuning  
-- 🧪 Compare different fine-tuning methods  
-- 📈 Uses **scikit-learn** for ML implementation  
-- 💾 Easy-to-modify dataset (`data.csv`)  
+- 🔬 Evaluate ML models across 4 training setups: Zero, Few, K-shot, and Full Fine-Tuning
+- 📊 Track and compare F1 score improvements for each dataset
+- ⚙️ Uses **Random Forest** classifier for robustness and interpretability
+- 🧪 Built using **scikit-learn**, **pandas**, and **numpy**
+
+---
+
+## 📈 Results Summary
+
+**Blood Sugar Classification (Binary Dataset)**  
+- Zero/Few-Shot: F1 = 0.6034  
+- K-Shot (20% labeled): F1 = 0.6667  
+- Fine-Tuned: F1 = 0.6405
+
+**Sentiment Classification (Text Dataset)**  
+- Zero/Few-Shot: F1 = 0.5241  
+- Fine-Tuned: F1 = 0.7120  
+
+Fine-tuning significantly improves model performance, especially with increased labeled data.
+
+---
+
+## 🔍 Why Random Forest?
+
+- 🧠 Handles tabular & text-based features well
+- ✅ Reduces overfitting with ensemble learning
+- 🔍 Offers feature importance insight
+- 💡 Performs well with imbalanced data
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Technology       | Description                   |
-|------------------|-------------------------------|
-| **Python**       | Programming Language           |
-| **Pandas**       | Data Manipulation              |
-| **NumPy**        | Numerical Computing            |
-| **Scikit-learn** | ML Algorithms & Evaluation     |
+| Technology       | Description                        |
+|------------------|------------------------------------|
+| **Python**       | Programming Language               |
+| **Pandas**       | Data manipulation and analysis     |
+| **NumPy**        | Numerical computations             |
+| **Scikit-learn** | ML modeling and evaluation tools   |
 
 ---
 
 ## 🚀 How to Run
 
-1. **Install dependencies**  
+1. **Install dependencies**
+
 ```bash
 pip install pandas numpy scikit-learn
 ```
 
-2. **Run any script**  
-Make sure you are inside the `iiser/` folder.
+2. **Run any script**
 
 ```bash
-# Baseline
+# From Blood Sugar Model folder
 python ml_beforefinetunned.py
-
-# Full Fine-Tuning
+python ml_kshotfinetunned.py
 python ml_finetunned.py
 
-# K-Shot Fine-Tuning
-python ml_kshotfinetunned.py
+# From Sentence Classification Model folder
+python nlp_zeroandfewshot.py
+python nlp_finetunned.py
 ```
 
 ---
 
 ## 📊 Dataset Info
 
-- File: `data.csv`  
-- Format: Standard CSV with features + target labels  
-- You can replace it with your own dataset for experimentation.
+- `data.csv` files are included in each model folder
+- Binary classification data: physiological records (age, BMI, glucose, etc.)
+- Sentiment classification data: sentence and its polarity label
+
+---
+
+## 📜 Report & Certificate
+
+- 📄 [Internship Report (PDF)](https://drive.google.com/file/d/1pYffOltpLt8tK3omIJmKhUh6bSXg_Sur/view?usp=sharing)  
+- 📑 [Certificate Issued by Professor](https://drive.google.com/file/d/1bkQbJ2FrMVn0Tja2iE8yp8_k0WXlbaSe/view?usp=sharing)
 
 ---
 
 ## 🧑‍💻 Author
 
-**Made by: Arpan Mukherjee**  
+**Arpan Mukherjee**  
+🎓 3rd Year Undergraduate, NIT Durgapur  
 🌐 [GitHub Profile](https://github.com/Technicalarpan)
 
 ---
